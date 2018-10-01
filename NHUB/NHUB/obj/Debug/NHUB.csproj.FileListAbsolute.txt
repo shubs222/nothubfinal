@@ -50,6 +50,7 @@ D:\My Tasks\NHUB\NHUB\bin\roslyn\VBCSCompiler.exe.config
 D:\My Tasks\NHUB\NHUB\bin\Antlr3.Runtime.dll
 D:\My Tasks\NHUB\NHUB\bin\AspNet.ScriptManager.bootstrap.dll
 D:\My Tasks\NHUB\NHUB\bin\AspNet.ScriptManager.jQuery.dll
+D:\My Tasks\NHUB\NHUB\bin\DAL.dll
 D:\My Tasks\NHUB\NHUB\bin\EntityFramework.dll
 D:\My Tasks\NHUB\NHUB\bin\EntityFramework.SqlServer.dll
 D:\My Tasks\NHUB\NHUB\bin\Microsoft.AspNet.FriendlyUrls.dll
@@ -75,6 +76,7 @@ D:\My Tasks\NHUB\NHUB\bin\Owin.dll
 D:\My Tasks\NHUB\NHUB\bin\System.Web.Optimization.dll
 D:\My Tasks\NHUB\NHUB\bin\System.Web.Providers.dll
 D:\My Tasks\NHUB\NHUB\bin\WebGrease.dll
+D:\My Tasks\NHUB\NHUB\bin\DAL.pdb
 D:\My Tasks\NHUB\NHUB\bin\System.Web.Optimization.xml
 D:\My Tasks\NHUB\NHUB\bin\Newtonsoft.Json.xml
 D:\My Tasks\NHUB\NHUB\bin\Antlr3.Runtime.pdb
@@ -100,5 +102,3 @@ D:\My Tasks\NHUB\NHUB\obj\Debug\NHUB.csproj.CoreCompileInputs.cache
 D:\My Tasks\NHUB\NHUB\obj\Debug\NHUB.csproj.CopyComplete
 D:\My Tasks\NHUB\NHUB\obj\Debug\NHUB.dll
 D:\My Tasks\NHUB\NHUB\obj\Debug\NHUB.pdb
-D:\My Tasks\NHUB\NHUB\bin\DAL.dll
-D:\My Tasks\NHUB\NHUB\bin\DAL.pdb

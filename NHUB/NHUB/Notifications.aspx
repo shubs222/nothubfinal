@@ -8,19 +8,6 @@
                <asp:PlaceHolder ID="NotificationPlaceHolder" runat="server"></asp:PlaceHolder>
             </p>
 
-                    <strong>
-                          
-                    <asp:TreeView ID="TreeView1" runat="server" style="height: 196px; font-family: Arial; font-size: large; color: #0000FF;" Width="122px" BackColor="White" ExpandDepth="0" ForeColor="#0066FF" ImageSet="Arrows">
-                        <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
-                        <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
-                        <ParentNodeStyle Font-Bold="False" />
-                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
-                    </asp:TreeView>
-                       
-            
-          
-             </strong>
-            
           
              <br />
 

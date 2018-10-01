@@ -126,8 +126,9 @@ namespace DAL.Repository
                         throw error;
                     }
                 }
-             
-            }
+          
+
+        }
 
         public void InsertEvent_slm_subscribe_users(int PEslmid, string PUid)
         {
@@ -155,7 +156,7 @@ namespace DAL.Repository
                     ParameterName = "@UserId",
                     Value = PUid,
                     SqlDbType = SqlDbType.NVarChar,
-                    Size = 10
+                    Size = 128
                 };
 
                 command.Parameters.Add(parameter);
@@ -213,7 +214,6 @@ namespace DAL.Repository
               
         //    }
         //}
-
 
     }
 

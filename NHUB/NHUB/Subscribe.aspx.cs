@@ -23,47 +23,50 @@ namespace NHUB
             EventName.Text = dr[1].ToString();
             ConfCheck.Enabled = false;
             MandCheck.Enabled = false;
-            if (dr[3].ToString() == "1")
+            if (dr[4].ToString()=="True")
             {
                 ConfCheck.Enabled = true;
                 ConfCheck.Checked = true;
             }
-            if (dr[4].ToString() == "1")
+            if (dr[3].ToString() == "True")
             {
                 MandCheck.Enabled = true;
                 MandCheck.Checked = true;
             }
 
             DataTable tb1 = addNotificationRepository.EventChannelGetData(qstring).Tables[0];
+            if (!IsPostBack)
+            {
                 IntranetCheck.Enabled = false;
                 SmsCheckBox.Enabled = false;
                 UnabotCheckBox.Enabled = false;
                 EmailCheckbox.Enabled = false;
 
-            for (int count = 0; count < tb1.Rows.Count; count++)
-            {
-                //    if(tb1.Rows[count])
-                if (Convert.ToInt32(tb1.Rows[count][0]) == 1)
+                for (int count = 0; count < tb1.Rows.Count; count++)
                 {
-                    IntranetCheck.Enabled = true;
-                    IntranetCheck.Checked = true;
-                }
-                if (Convert.ToInt32(tb1.Rows[count][0]) == 2)
-                {
-                    EmailCheckbox.Enabled = true;
-                    EmailCheckbox.Checked = true;
-                }
-                if (Convert.ToInt32(tb1.Rows[count][0]) == 3)
-                {
-                    UnabotCheckBox.Enabled = true;
-                    UnabotCheckBox.Checked = true;
-                }
-                if (Convert.ToInt32(tb1.Rows[count][0]) == 4)
-                {
-                    SmsCheckBox.Enabled = true;
-                    SmsCheckBox.Checked = true;
-                }
+                    //    if(tb1.Rows[count])
+                    if (Convert.ToInt32(tb1.Rows[count][0]) == 1)
+                    {
+                        IntranetCheck.Enabled = true;
+                        IntranetCheck.Checked = true;
+                    }
+                    if (Convert.ToInt32(tb1.Rows[count][0]) == 2)
+                    {
+                        EmailCheckbox.Enabled = true;
+                        EmailCheckbox.Checked = true;
+                    }
+                    if (Convert.ToInt32(tb1.Rows[count][0]) == 3)
+                    {
+                        UnabotCheckBox.Enabled = true;
+                        UnabotCheckBox.Checked = true;
+                    }
+                    if (Convert.ToInt32(tb1.Rows[count][0]) == 4)
+                    {
+                        SmsCheckBox.Enabled = true;
+                        SmsCheckBox.Checked = true;
+                    }
 
+                }
             }
             
         }
@@ -94,7 +97,7 @@ namespace NHUB
             {
                 if (UserListBox.Items[i].Selected)
                 {
-                    eventSubsribeNotification.InsertEvent_slm_subscribe_users(qstring, UserListBox.Items[i].Value);
+                    eventSubsribeNotification.InsertEvent_slm_subscribe_users(evsubid, UserListBox.Items[i].Value);
                 }
             }
 
@@ -112,6 +115,7 @@ namespace NHUB
 
         protected void Adduser_Click1(object sender, EventArgs e)
         {
+            Label1.Text = string.Empty;
             for (int i = 0; i < UserListBox.Items.Count; i++)
             {
                 if (UserListBox.Items[i].Selected)

@@ -24,8 +24,9 @@ namespace NHUB
                 DataTable tb = addNotificationRepository.GetEventData(0).Tables[0];
                 DataRow dr = tb.Select("Id = " + id)[0];
                 NameTextBox.Text = dr[1].ToString();
-                ConfidentialCheckBox.Text = dr[3].ToString();
-                MandetoryCheckBox.Text = dr[4].ToString();
+                MandetoryCheckBox.Checked = Convert.ToBoolean(dr[3]);
+                ConfidentialCheckBox.Checked = Convert.ToBoolean(dr[4]);
+              
                 SourceList.SelectedValue = dr[2].ToString();
                 SourceList.Enabled = false;
 
@@ -69,7 +70,7 @@ namespace NHUB
             else
             {
                 int id = Convert.ToInt32(Request.QueryString["Id"]);
-                addNotificationRepository.UpdateData(id, NameTextBox.Text);
+                addNotificationRepository.UpdateEventData(id, NameTextBox.Text,MandetoryCheckBox.Checked,ConfidentialCheckBox.Checked);
                 addNotificationRepository.DeleteChannel(id);
 
                 if (Intranet.Checked)

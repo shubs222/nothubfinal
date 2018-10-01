@@ -14,15 +14,15 @@ namespace DAL.Repository
     public class AddNotificationRepository
     {
 
-        public int InsertEvent(string Name, int Sourceid)
+        public int InsertEvent(string Name, int Sourceid,bool Confidential, bool Mandetory)
         {
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = Connections.Constring;
             connection.Open();
             // Note the "placeholders" in the SQL query.
             string sql = "Insert Into Event" +
-                                "(Name, SourceId) Values" +
-                                "(@Name, @Sourceid)";
+                                "(Name, SourceId,Mandatory,Confidential) Values" +
+                                "(@Name, @Sourceid,@Mandatory,@Confidential)";
 
 
             // This command will have internal parameters.
@@ -47,23 +47,23 @@ namespace DAL.Repository
                 };
                 command.Parameters.Add(parameter);
 
-                //parameter = new SqlParameter
-                //{
-                //    ParameterName = "@Mandatory",
-                //    Value = Mandetory,
-                //    SqlDbType = SqlDbType.Bit,
-                //    Size = 1
-                //};
-                //command.Parameters.Add(parameter);
+                parameter = new SqlParameter
+                {
+                    ParameterName = "@Mandatory",
+                    Value = Mandetory,
+                    SqlDbType = SqlDbType.Bit,
+                    Size = 1
+                };
+                command.Parameters.Add(parameter);
 
-                //parameter = new SqlParameter
-                //{
-                //    ParameterName = "@Confidential",
-                //    Value = Confidential,
-                //    SqlDbType = SqlDbType.Bit,
-                //    Size = 1
-                //};
-                //command.Parameters.Add(parameter);
+                parameter = new SqlParameter
+                {
+                    ParameterName = "@Confidential",
+                    Value = Confidential,
+                    SqlDbType = SqlDbType.Bit,
+                    Size = 1
+                };
+                command.Parameters.Add(parameter);
 
 
                 try
@@ -202,7 +202,7 @@ namespace DAL.Repository
             }
         }
 
-        public void UpdateData(int EventId,string name)
+        public void UpdateEventData(int EventId,string name,bool Maandetory,bool Confidential)
         {
 
             using (SqlConnection connection = new SqlConnection())
@@ -211,7 +211,7 @@ namespace DAL.Repository
 
                 connection.Open();
 
-                string sql = $"Update event set Name='{name}' where Id=" + EventId;
+                string sql = $"Update event set Name='{name}', Mandatory='{Maandetory}', Confidential='{Confidential}'where Id=" + EventId;
                 SqlCommand sqlCommand = new SqlCommand(sql, connection);
                 // SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
                 sqlCommand.ExecuteNonQuery();
