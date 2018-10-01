@@ -31,7 +31,8 @@ namespace NHUB
             {
                 AddNotificationRepository addNotificationRepository = new AddNotificationRepository();
                 int Eid;
-                Eid = addNotificationRepository.InsertEvent(NameTextBox.Text, Convert.ToInt32(SourceDropList.SelectedValue));
+                
+                Eid = addNotificationRepository.InsertEvent(NameTextBox.Text, Convert.ToInt32(SourceDropList.SelectedValue),ConfidentialEventCheckBox.Checked,MandetoryEventCheckBox.Checked);
 
                 for (int Count = 0; Count < 4; Count++)
                 {
